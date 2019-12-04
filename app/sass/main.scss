@@ -34,12 +34,16 @@ input {
 /*settings*/
 @import "fonts";
 @import "var";
+@import "main-slider";
 
 /*over use blocks*/
 @import "header";
 @import "footer";
 
 /*pages*/
+// home page
+@import "pages/home-page/main-block";
+@import "pages/home-page/stocks";
 
 /*media*/
 @import "media/1199";

@@ -1,0 +1,21 @@
+.stocks {
+  padding: 100px 0; // timing
+  overflow: hidden;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #222222;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  }
+}
