@@ -64,7 +64,7 @@
   .main-slider__item {
     height: 100%;
     width: 100%;
-    max-width: 1050px;
+    max-width: calc(100% - 150px);
     background-image: url(../media/image/slider.jpg);
     background-position: center;
     background-size: cover;

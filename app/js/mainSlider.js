@@ -1,32 +1,16 @@
 const mainSliderCreate = () => {
-  /*
-  Нужно получить все блоки итемы слайдера
-  Добавить им отстпуты и правильные индексы
-   */
-
   const items = $('.main-slider__item');
 
-  for(let i = 0; i < items.length; i++) {
-    let left = i * 50;
+  for (let i = 0; i < items.length; i++) {
+    let varLeft = $(window).width() > 575 ? 50 : 25;
+    let left = i * varLeft;
     let z = items.length + 1 - i;
-    let height = items.eq(0).css('height');
+    let scale = 1 - i * .1;
 
     items.eq(i).css({
-      'left': left + 'px',
+      'transform': `translateX(${left}px) scaleY(${scale})`,
       'z-index': z,
-      'top': '0px'
     });
-
-    if(i > 0) {
-      height = height.split('px')[0];
-      let newHeight = height - 40 * i;
-      let newTop = 20 * i;
-      console.log(`height ${height}`);
-      items.eq(i).css({
-        'height': newHeight + 'px',
-        'top': newTop + 'px'
-      })
-    }
   }
 };
 
@@ -34,87 +18,151 @@ const mainSliderCreate = () => {
 let mainSliderClicking = false;
 
 const mainSliderNext = () => {
-  if(!mainSliderClicking) {
+  if (!mainSliderClicking) {
     mainSliderClicking = true;
+
+    $('.main-slider__nav .prev').removeClass('disabled');
+
     // change timeline
     const timelineItems = $('.main-slider__nav .timeline .item');
     const nextTimelineItem = $('.main-slider__nav .timeline .item--active').next('.item');
 
-    if(nextTimelineItem.length > 0) {
+    if (nextTimelineItem.length > 0) {
+      const items = $('.main-slider__item');
+
       timelineItems.removeClass('item--active');
       nextTimelineItem.addClass('item--active');
 
       // filter change
       const nextCurrent = $('.main-slider__item--current').next('.main-slider__item');
-      $('.main-slider__item').removeClass('main-slider__item--current');
+      items.removeClass('main-slider__item--current');
       nextCurrent.addClass('main-slider__item--current');
 
+      // active slider right and left
       const activeSlide = $('.main-slider__item--active');
+      const activeLeft = $('.main-slider__body .active--left');
+      const activeRight = $('.main-slider__body .active--right');
       const nextActive = activeSlide.last().next('.main-slider__item');
 
-      //give the count active left slide
-      let leftActive = $('.main-slider__body').attr('data-slide');
-      +leftActive++;
+      activeRight.eq(0).removeClass('active--right');
 
-      if(+leftActive > 3) {
-        activeSlide.eq(0).removeClass('main-slider__item--active');
-      }
       if(nextActive.length > 0) {
         nextActive.addClass('main-slider__item--active');
-        $('.main-slider__body').attr('data-slide', leftActive);
-      } else {
-        // if nextActive mast be first item
+        nextActive.addClass('active--right');
       }
-      const items = $('.main-slider__item');
 
+      $('.main-slider__item--current').prev('.main-slider__item').addClass('main-slider__item--active');
+      $('.main-slider__item--current').prev('.main-slider__item').addClass('active--left');
+
+      if(activeLeft.length > 2) {
+        activeSlide.eq(0).removeClass('main-slider__item--active');
+        activeSlide.eq(0).removeClass('active--left');
+      }
+      let varLeft = $(window).width() > 575 ? 50 : 25;
       // change styles all other slides
-      for(let i = 0; i < items.length; i++) {
+      for (let i = 0; i < items.length; i++) {
         // current styles
         const current = items.eq(i);
+        const translate = current.css('transform').split(',')[4];
+        const newTranslate = +translate - varLeft;
+        const scale = current.css('transform').split(',')[3];
+        const newScale = +translate > 0 ? +scale + .1 : +scale - .1;
         const z = current.css('z-index');
-        const height = current.css('height').split('px')[0];
-        const left = current.css('left').split('px')[0];
-        const top = current.css('top').split('px')[0];
+        const newZ = +translate > 0 ? +z + 1 : +z - 1;
 
 
-        // next styles
-        const newLeft = +left - 50;
-
-        if(+left < 0 || +left === 0) {
-          // new styles
-          const newZ = +z - 1;
-          const newHeight = +height - 40;
-          const newTop = +top + 20;
-
-          current.css({
-            'left': newLeft + 'px',
-            'z-index': newZ,
-            'height': newHeight + 'px',
-            'top': newTop + 'px'
-          });
-        } else {
-          // new styles
-          const newZ = +z + 1;
-          const newHeight = +height + 40;
-          const newTop = +top - 20;
-
-          current.css({
-            'left': newLeft + 'px',
-            'z-index': newZ,
-            'height': newHeight + 'px',
-            'top': newTop + 'px'
-          });
-        }
+        current.css({
+          'transform': `translateX(${newTranslate}px) scaleY(${newScale.toFixed(1)})`,
+          'z-index': newZ
+        });
       }
-      setTimeout(() => {
-        mainSliderClicking = false;
-      }, 600);
+      if ($('.main-slider__nav .timeline .item--active').next('.item').length === 0) {
+        $('.main-slider__nav .next').addClass('disabled');
+      }
     } else {
-      // disabled button
+
     }
+    setTimeout(() => {
+      mainSliderClicking = false;
+    }, 600);
   } else {
     console.log('clicking ing progress...')
   }
 };
 
-export {mainSliderCreate, mainSliderNext}
+const mainSliderPrev = () => {
+  if (!mainSliderClicking) {
+    mainSliderClicking = true;
+
+    $('.main-slider__nav .next').removeClass('disabled');
+
+    // change timeline
+    const timelineItems = $('.main-slider__nav .timeline .item');
+    const nextTimelineItem = $('.main-slider__nav .timeline .item--active').prev('.item');
+
+    if (nextTimelineItem.length > 0) {
+      const items = $('.main-slider__item');
+
+      timelineItems.removeClass('item--active');
+      nextTimelineItem.addClass('item--active');
+
+      // filter change
+      const nextCurrent = $('.main-slider__item--current').prev('.main-slider__item');
+      items.removeClass('main-slider__item--current');
+      nextCurrent.addClass('main-slider__item--current');
+
+      // active slider right and left
+      const activeSlide = $('.main-slider__item--active');
+      const activeLeft = $('.main-slider__body .active--left');
+      const activeRight = $('.main-slider__body .active--right');
+      const nextActive = activeSlide.eq(0).prev('.main-slider__item');
+
+      activeLeft.last().removeClass('active--left');
+
+      if(nextActive.length > 0) {
+        nextActive.addClass('main-slider__item--active');
+        nextActive.addClass('active--left');
+      }
+
+      $('.main-slider__item--current').next('.main-slider__item').addClass('main-slider__item--active');
+      $('.main-slider__item--current').next('.main-slider__item').addClass('active--right');
+
+      if(activeRight.length > 2) {
+        activeSlide.last().removeClass('main-slider__item--active');
+        activeSlide.last().removeClass('active--right');
+      }
+
+      let varLeft = $(window).width() > 575 ? 50 : 25;
+      // change styles all other slides
+      for (let i = 0; i < items.length; i++) {
+        // current styles
+        const current = items.eq(i);
+        const translate = current.css('transform').split(',')[4];
+        const newTranslate = +translate + varLeft;
+        const scale = current.css('transform').split(',')[3];
+        const newScale = +translate < 0 ? +scale + .1 : +scale - .1;
+        const z = current.css('z-index');
+        const newZ = +translate < 0 ? +z + 1 : +z - 1;
+
+
+        current.css({
+          'transform': `translateX(${newTranslate}px) scaleY(${newScale.toFixed(1)})`,
+          'z-index': newZ
+        });
+      }
+      if ($('.main-slider__nav .timeline .item--active').prev('.item').length === 0) {
+        $('.main-slider__nav .prev').addClass('disabled');
+      }
+    } else {
+
+    }
+    setTimeout(() => {
+      mainSliderClicking = false;
+    }, 600);
+  } else {
+    console.log('clicking ing progress...')
+  }
+};
+
+
+export {mainSliderCreate, mainSliderNext, mainSliderPrev}

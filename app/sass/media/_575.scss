@@ -1,3 +1,18 @@
 @media screen and (max-width: 575px) {
+  // main-slider
+  .main-slider__nav {
+    width: 100%;
 
+    .timeline {
+      width: 100%;
+    }
+  }
+  .main-slider__body {
+    height: 150px;
+
+    .main-slider__item {
+      max-width: calc(100% - 75px);
+    }
+  }
+  // main-slider end
 }
