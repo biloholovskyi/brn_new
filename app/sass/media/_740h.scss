@@ -1,0 +1,17 @@
+@media screen and (max-height: 740px) {
+  // main-block
+  .main-block__box {
+    display: none;
+
+    &--mobile {
+      display: block;
+      margin-top: 0;
+
+      .item {
+        height: 250px !important;
+        margin-top: 10px;
+      }
+    }
+  }
+  // main-block end
+}

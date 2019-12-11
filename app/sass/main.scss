@@ -53,8 +53,10 @@ input {
 // home page
 @import "pages/home-page/main-block";
 @import "pages/home-page/stocks";
+@import "pages/home-page/main-page-catalog";
 
 /*media*/
+@import "media/740h";
 @import "media/1300";
 @import "media/1199";
 @import "media/991";

@@ -26,4 +26,17 @@
     }
   }
   // main-block end
+
+  // main-page-catalog
+  .main-page-catalog {
+    .item {
+      height: 450px;
+
+      .name {
+        font-size: 20px;
+        line-height: 40px;
+      }
+    }
+  }
+  // main-page-catalog end
 }
