@@ -12,4 +12,23 @@
     height: 250px;
   }
   // main-slider end
+
+  // footer
+  .mobile-none {
+    display: none;
+  }
+
+  .footer__nav {
+    margin-bottom: 36px;
+
+    &--more {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+  // footer end
 }

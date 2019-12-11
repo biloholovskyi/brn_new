@@ -15,4 +15,54 @@
     }
   }
   // main-slider end
+
+  // header
+  .header__logo {
+    display: none;
+  }
+
+  .header__mobile-logo {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  .header__number {
+    margin-left: 15px;
+
+    .icon {
+      display: none;
+    }
+
+    .number {
+      margin-right: 0;
+    }
+  }
+
+  .header__left{
+    &::before {
+      left: 48px;
+    }
+  }
+  // header end
+
+  // main-block
+  .main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-block__pre-title {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 0;
+  }
+
+  .main-block__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  // main-block end
 }

@@ -84,7 +84,7 @@ const mainSliderNext = () => {
     }
     setTimeout(() => {
       mainSliderClicking = false;
-    }, 600);
+    }, 700);
   } else {
     console.log('clicking ing progress...')
   }
@@ -158,7 +158,7 @@ const mainSliderPrev = () => {
     }
     setTimeout(() => {
       mainSliderClicking = false;
-    }, 600);
+    }, 700);
   } else {
     console.log('clicking ing progress...')
   }

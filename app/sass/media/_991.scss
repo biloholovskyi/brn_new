@@ -4,4 +4,26 @@
     height: 350px;
   }
   // main-slider end
+
+  // header
+  .header__menu {
+    display: none;
+  }
+  // header end
+
+  // main-block
+  .main-block__box {
+    display: none;
+
+    &--mobile {
+      display: block;
+      margin-top: 0;
+
+      .item {
+        height: 250px !important;
+        margin-top: 10px;
+      }
+    }
+  }
+  // main-block end
 }

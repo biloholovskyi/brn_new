@@ -38,6 +38,10 @@
     object-fit: contain;
   }
 
+  &__mobile-logo {
+    display: none;
+  }
+
   &__number {
     position: relative;
     display: flex;

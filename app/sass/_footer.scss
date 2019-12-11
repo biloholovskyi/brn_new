@@ -1,3 +1,108 @@
 .footer {
+  background: #201F1F;
+  padding: 36px 0 8px 0;
 
+  &__logo-list {
+    img {
+      object-position: left;
+      object-fit: contain;
+      max-width: 100%;
+      margin-bottom: 32px;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__nav {
+    .title {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      color: #FFFFFF;
+    }
+
+    ul {
+      li {
+        margin-bottom: 28px;
+        list-style: none;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        a {
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+
+    &--contacts {
+      ul {
+        li {
+          a {
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.03em;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    &--mobile {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    margin-top: 36px;
+    border-top: 1px solid #363535;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+
+    .footer__coop {
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer__social {
+      display: flex;
+
+      .item {
+        display: block;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-size: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all .3s;
+        filter: brightness(0) invert(1);
+
+        &:hover {
+          background-color: rgba(255, 202, 0, 0.1);
+          border: 2px solid #FFCA00;
+          filter: none;
+        }
+      }
+    }
+  }
 }
