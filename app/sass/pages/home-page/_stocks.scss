@@ -1,12 +1,35 @@
 .stocks {
-  padding: 100px 0; // timing
-  overflow: hidden;
+  padding: 100px 0 0 0; // timing
+  background: #F8F8F8;
+  position: relative;
+  overflow-y: visible;
+
+  .line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      left: -50%;
+      background-color: #fff;
+      height: 100%;
+      top: -110px;
+      z-index: 4;
+      transform: rotate(8deg);
+    }
+  }
 
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 64px;
+    position: relative;
+    z-index: 5;
   }
 
   &__title {
@@ -17,5 +40,7 @@
     text-transform: uppercase;
     color: #222222;
     text-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 5;
   }
 }

@@ -1,0 +1,222 @@
+.service-page {
+  &__text {
+    padding-top: 160px;
+    padding-bottom: 80px;
+
+    .title {
+      font-weight: bold;
+      font-size: 56px;
+      line-height: 64px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #222222;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 24px;
+      color: #222222;
+
+      * {
+        font-size: 16px;
+        line-height: 24px;
+        color: #222222;
+      }
+    }
+  }
+}
+
+.prime-photo {
+  margin-bottom: 160px;
+
+  .big {
+    width: 100%;
+    height: 450px;
+    object-position: center;
+    object-fit: cover;
+    margin-bottom: 40px;
+  }
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .item {
+      display: block;
+      width: 100%;
+      max-width: calc((100% / 6) - 55px);
+      margin-right: 55px;
+      object-fit: contain;
+      object-position: center;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.parts {
+  background-image: url(../media/image/part.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 160px 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(32, 31, 31, 0.4), rgba(32, 31, 31, 0.4));
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+      font-weight: bold;
+      font-size: 56px;
+      line-height: 64px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .link {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      padding: 16px 24px;
+      background: #FFCA00;
+    }
+  }
+}
+
+.page-form {
+  padding: 160px 0;
+
+  .text {
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #222222;
+  }
+
+  &__form {
+    width: 100%;
+
+    .wrapper-input {
+      position: relative;
+      width: 100%;
+      margin-bottom: 32px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.6);
+        top: 0;
+        left: 0;
+        margin-top: 16px;
+        transition: all .3s;
+      }
+
+      &--name {
+        &::after {
+          content: 'Имя';
+        }
+      }
+
+      &--tel {
+        &::after {
+          content: 'Номер телефона';
+        }
+      }
+
+      &--email {
+        &::after {
+          content: 'Email (необязательно)';
+        }
+      }
+
+      &--problem {
+        &::after {
+          content: 'Опишите проблему';
+        }
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+        line-height: 56px;
+        font-size: 16px;
+        color: #000000;
+        position: relative;
+        z-index: 2;
+        background-color: transparent;
+      }
+
+      &--active {
+        &::after {
+          font-size: 12px;
+          line-height: 12px;
+          color: #BF9900;
+          margin-top: 0;
+        }
+
+        input {
+          border-bottom: 1px solid #BF9900;
+        }
+      }
+    }
+
+    .double-input {
+      display: flex;
+
+      .wrapper-input {
+        &:first-child {
+          margin-right: 32px;
+        }
+      }
+    }
+
+    .page-form__submit {
+      margin-top: 32px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: #FFCA00;
+      border: none;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+    }
+
+    .alert {
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: -0.01em;
+      color: #777777;
+    }
+  }
+}

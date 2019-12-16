@@ -1,15 +1,72 @@
 @media screen and (max-width: 767px) {
   // main-slider
   .stocks__top {
-    flex-direction: column;
+    .stocks__title {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #222222;
+      text-shadow: 0px 8px 16px rgba(0, 0, 0, 0.06);
+    }
   }
 
   .main-slider__nav {
     margin-top: 40px;
+    display: none;
   }
 
-    .main-slider__body {
+  .main-slider__body {
     height: 250px;
+    display: none;
+  }
+
+  .main-slider__mobile {
+    display: block !important;
+
+    .owl-stage-outer {
+      overflow: visible !important;
+
+      .owl-item {
+        filter: grayscale(100%);
+      }
+
+      .active {
+        filter: none;
+      }
+    }
+
+    .item {
+      img {
+        width: 100%;
+        height: 164px;
+        object-position: center;
+        object-fit: cover;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .title {
+        font-size: 18px;
+        line-height: 27px;
+        color: #222222;
+        margin-bottom: 8px;
+      }
+
+      .desc {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        color: rgba(51, 51, 51, 0.8);
+
+        * {
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          color: rgba(51, 51, 51, 0.8);
+        }
+      }
+    }
   }
   // main-slider end
 
@@ -31,4 +88,167 @@
     }
   }
   // footer end
+
+  // catalog inner
+  .catalog-page-product__year-wrapper {
+    justify-content: space-between;
+  }
+
+  .catalog-page-product__item {
+    img {
+      min-width: 90%;
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .info {
+      .title {
+        text-align: center;
+        font-size: 20px;
+        line-height: 22px;
+      }
+
+      .price {
+        text-align: center;
+      }
+
+      .button-wrapper {
+        flex-direction: column;
+
+        .buy {
+          margin-right: 0;
+          margin-bottom: 12px;
+        }
+
+        .doc {
+          margin-right: 0;
+          margin-bottom: 12px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  // catalog inner end
+
+  // prime
+  .prime-photo {
+    margin-bottom: 40px;
+
+    .big {
+      height: 162px;
+    }
+
+    .logo-wrapper {
+      flex-wrap: wrap;
+
+      .item {
+        max-width: calc((100% / 3) - 10px);
+        margin-right: 0;
+        margin-bottom: 13px;
+      }
+    }
+  }
+  // prime end
+
+  // parts
+  .parts__wrapper {
+    flex-direction: column;
+
+    .text {
+      margin-bottom: 15px;
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
+
+    .link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  // parts end
+
+  // page-form
+  .page-form {
+    padding: 40px 0;
+  }
+
+  .page-form__form {
+    .double-input {
+      flex-direction: column;
+
+      .wrapper-input {
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .page-form__submit {
+      width: 100%;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+  // page-form end
+
+  // service page text
+  .service-page__text {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .text {
+      margin-bottom: 24px;
+    }
+  }
+  // service page text end
+
+  // block content
+  .block-contacts {
+    padding: 36px 0;
+
+    .title {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 24px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+  // block content end
+
+  // contacts
+  #map {
+    height: 167px;
+    margin: 24px 0;
+  }
+
+  .contacts-mobile {
+    display: block;
+  }
+
+  .contacts-mobile-hidden {
+    display: none;
+  }
+  // contacts end
+
+  .page-form__form {
+    .alert {
+      text-align: center;
+    }
+  }
+
+  .form-modal__body {
+    .page-form {
+      .form-modal__title {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+  }
 }

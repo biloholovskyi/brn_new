@@ -2,6 +2,7 @@
   // main-slider
   .main-slider__nav {
     width: 100%;
+    display: none;
 
     .timeline {
       width: 100%;
@@ -9,6 +10,7 @@
   }
   .main-slider__body {
     height: 150px;
+    display: none;
 
     .main-slider__item {
       max-width: calc(100% - 75px);
@@ -74,4 +76,14 @@
     }
   }
   // main-page-catalog end
+
+  // catalog page
+  .catalog-page__header {
+    padding: 114px 0 36px 0;
+    .catalog-page__title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+  // catalog page end
 }

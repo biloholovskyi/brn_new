@@ -39,4 +39,49 @@
     }
   }
   // main-page-catalog end
+
+  // catalog inner
+  .catalog-page-product__item {
+    flex-direction: column;
+
+    img {
+      margin-right: 0;
+    }
+  }
+  // catalog inner end
+
+  // stock-page
+  .stock-page__item {
+    img {
+      height: 200px;
+    }
+  }
+  // stock-page end
+
+  // page-form
+  .page-form {
+    .text {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+  // page-form end
+
+  // parts
+  .parts__wrapper {
+    .text {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+  // parts end
+
+  // service-page
+  .service-page__text {
+    .title {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+  // service-page end
 }

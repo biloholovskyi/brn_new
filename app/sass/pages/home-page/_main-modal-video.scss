@@ -1,0 +1,39 @@
+.main-modal-video {
+  position: fixed;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.9);
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__object {
+    width: 100%;
+    max-width: 90%;
+    max-height: calc(95% - 80px);
+    object-fit: contain;
+  }
+
+  &__close {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    background-image: url(../media/icon/delete.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1);
+    margin-bottom: 15px;
+    align-self: flex-end;
+    margin-right: 5%;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -14,6 +14,15 @@
         margin-bottom: 0;
       }
     }
+
+    a {
+      margin-bottom: 32px;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__nav {

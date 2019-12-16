@@ -1,0 +1,22 @@
+@media screen and (max-height: 840px) {
+  // main-block
+  .main-block__watch {
+    margin-bottom: 40px;
+  }
+
+  .main-block__box {
+    //display: none;
+    margin-top: 40px;
+
+    &--mobile {
+      //display: block;
+      //margin-top: 0;
+
+      .item {
+        //height: 250px !important;
+        //margin-top: 10px;
+      }
+    }
+  }
+  // main-block end
+}

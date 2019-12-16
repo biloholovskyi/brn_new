@@ -10,6 +10,10 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+body {
+  max-width: 100%;
+}
+
 a,
 a:hover,
 a:focus,
@@ -44,6 +48,9 @@ input {
 @import "fonts";
 @import "var";
 @import "main-slider";
+@import "catalog-modal";
+@import "mobile-menu";
+@import "form-modal";
 
 /*over use blocks*/
 @import "header";
@@ -54,8 +61,30 @@ input {
 @import "pages/home-page/main-block";
 @import "pages/home-page/stocks";
 @import "pages/home-page/main-page-catalog";
+@import "pages/home-page/main-modal-video";
+
+// catalog page
+@import "pages/catalog/catalog-page__header";
+@import "pages/catalog/catalog-page__body";
+@import "pages/catalog/catalog-page-product";
+
+// stock
+@import "pages/stock/stock-page";
+
+// service
+@import "pages/service/service-page";
+
+// about
+@import "pages/abotu/block-contacts";
+
+// contacts
+@import "pages/contacts/contacts-page";
+
+// accessories
+@import "pages/accessories/accessories-page";
 
 /*media*/
+@import "media/840h";
 @import "media/740h";
 @import "media/1300";
 @import "media/1199";

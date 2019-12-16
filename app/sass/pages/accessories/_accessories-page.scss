@@ -1,0 +1,39 @@
+.accessories-page {
+  padding: 80px 0 0 0;
+
+  .item {
+    width: 100%;
+    margin-bottom: 80px;
+
+    img {
+      height: 30px;
+      max-width: 100%;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
+
+    &__list {
+      display: block;
+      font-size: 16px;
+      line-height: 48px;
+      letter-spacing: -0.01em;
+      color: #222222;
+      position: relative;
+      padding-left: 36px;
+
+      &::after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        top: 0;
+        margin-top: 12px;
+        left: 0;
+        background-image: url(../media/icon/doc.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+      }
+    }
+  }
+}

@@ -1,10 +1,19 @@
 const menuSwitch = () => {
-  $(event.currentTarget).toggleClass('header__humb--show');
-  if($(event.currentTarget).hasClass('header__humb--show')) {
-    $('.header__modal-menu').fadeIn('fast');
+  if($(window).width() > 991) {
+    $(event.currentTarget).toggleClass('header__humb--show');
+    if($(event.currentTarget).hasClass('header__humb--show')) {
+      $('.header__modal-menu').fadeIn('fast');
+    } else {
+      $('.header__modal-menu').fadeOut('fast');
+    }
   } else {
-    $('.header__modal-menu').fadeOut('fast');
+    $('.mobile-menu').fadeIn('fast');
   }
 };
 
-export {menuSwitch}
+const closeMobileMenu = () => {
+  $('.mobile-menu').fadeOut('fast');
+  $('.catalog-modal').removeClass('catalog-modal--show');
+};
+
+export {menuSwitch, closeMobileMenu}
