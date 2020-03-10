@@ -14,6 +14,7 @@ $(document).ready(function () {
   $(".main-slider__mobile").owlCarousel({
     loop: false,
     center: false,
+    stagePadding: 16,
     margin: 16,
     autoplayHoverPause: true,
     autoPlay: false,

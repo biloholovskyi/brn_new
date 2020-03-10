@@ -4,6 +4,13 @@
   position: relative;
   overflow-y: visible;
 
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    z-index: 4;
+  }
+
   .line {
     position: absolute;
     width: 100%;
